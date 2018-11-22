@@ -46,6 +46,10 @@ class ContactoController: UIViewController, MFMailComposeViewControllerDelegate 
     let messageBody = "Hello World"
     let messageSender: String = "email de envio"
     
+    
+    
+    
+    //MARK: Função para o envio de email
     func sendMail () {
         
         if MFMailComposeViewController.canSendMail() {
