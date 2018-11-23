@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class ContactoController: UIViewController, MFMailComposeViewControllerDelegate {
+class ContactoController: UIViewController, MFMailComposeViewControllerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var nomeLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -45,11 +45,33 @@ class ContactoController: UIViewController, MFMailComposeViewControllerDelegate 
     let messageSubject = "Contacto"
     let messageBody = "Hello World"
     let messageSender: String = "email de envio"
+    let textViewPlaceholder = "Falem-me de vocês. Quantos são, os nomes e as idades dos miúdos. O que procuram para a vossa sessão?"
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mensagemTextView.delegate = self
+        mensagemTextView.text = textViewPlaceholder
+        mensagemTextView.textColor = UIColor.lightGray
+    }
     
+    //MARK: Edicao do text view
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
     
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == "" {
+            textView.text = textViewPlaceholder
+             mensagemTextView.textColor = UIColor.lightGray
+        }
+    }
     
-    //MARK: Função para o envio de email
+   
+    
+    //MARK: Funcao para o envio de email
     func sendMail () {
         
         if MFMailComposeViewController.canSendMail() {
