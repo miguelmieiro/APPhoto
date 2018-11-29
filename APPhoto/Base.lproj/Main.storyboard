@@ -373,6 +373,7 @@
                     <connections>
                         <outlet property="aceitoPubLabel" destination="bsg-D5-oSe" id="WWg-sy-9yi"/>
                         <outlet property="aceitoRespostaLabel" destination="DFO-gg-u88" id="pkF-V3-lth"/>
+                        <outlet property="contemLabel" destination="wtQ-Ah-qVl" id="bJE-3s-60b"/>
                         <outlet property="curtasSwitch" destination="3iO-Eb-fOR" id="uXm-Ba-yye"/>
                         <outlet property="emailLabel" destination="g1H-a5-hMy" id="hn7-AG-qFe"/>
                         <outlet property="emailTextField" destination="Q2T-Xz-sJP" id="VLn-Yd-2uf"/>
